@@ -1,0 +1,170 @@
+:root {
+  --bg1: rgb(56, 65, 73);
+  --bg2: rgb(32, 36, 41);
+  --border: rgb(163, 163, 163);
+  --text: rgb(201, 201, 201);
+  --text2: rgb(0, 0, 0);
+  --accent: rgb(118, 176, 189);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+div {
+  background-color: var(--bg1);
+  color: var(--text);
+}
+
+.title {
+  background-color: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+
+.container {
+  flex-grow: 1;
+  display: grid;
+  grid: 1fr 1fr / 1fr 5fr 4fr 1fr;
+  grid-template-areas:
+    "inve home aren craf"
+    "inve mine fore fore";
+  background-color: var(--border);
+  gap: 1px;
+}
+
+.inventory {
+  grid-area: inve;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.home {
+  grid-area: home;
+}
+
+.arena {
+  grid-area: aren;
+}
+
+.craft {
+  grid-area: craf;
+  display: flex;
+  flex-direction: column;
+}
+
+.mine {
+  grid-area: mine;
+}
+
+.forest {
+  grid-area: fore;
+}
+
+.tools {
+  padding-bottom: 10px;
+}
+
+.items {
+  width: 100%;
+  flex-grow: 1;
+  border-bottom: 1px solid var(--border);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home,
+.mine,
+.forest,
+.arena {
+  display: flex;
+  padding: 5px;
+}
+
+.resource {
+  width: 160px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.resource > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fight {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  padding: 20px;
+  margin: 0;
+}
+
+h4 {
+  background-color: var(--bg2);
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+}
+
+span {
+  padding: 10px;
+}
+
+.inventory span {
+  padding-bottom: 0;
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin: 5px;
+  background-color: var(--accent);
+  color: var(--text2);
+  cursor: pointer;
+}
+
+button:disabled {
+  border-color: red;
+}
+
+.expand {
+  flex-grow: 1;
+}
+
+.fill {
+  height: 100%;
+}
+
+.craft > button {
+  margin: 10px 10px 0 10px;
+}
